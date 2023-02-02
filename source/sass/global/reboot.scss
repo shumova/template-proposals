@@ -35,6 +35,8 @@ body {
   overflow-wrap: break-word;
 
   background-color: $color-default-white;
+
+  -webkit-tap-highlight-color: $color-transparent;
 }
 
 a {
