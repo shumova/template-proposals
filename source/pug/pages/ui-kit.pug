@@ -138,18 +138,50 @@ block main
 
       section(id="buttons")
         h2 Buttons
-        +btn({text: "Текст", href: "#"})
+
+        +btn({
+          text: "Button --red",
+          classMods: ['red'],
+        })
         p Пример вызова
-        code
-          pre +btn({text: "Текст", href: "#"})
-        +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
+        pre
+          .
+            +btn({
+              text: "Button --red",
+              classMods: ['red'],
+            })
+
+        +btn({
+          text: "Button with &lt;a&gt; tag",
+          href: "#",
+        })
         p Пример вызова
-        code
-          pre +btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
-        +btn({text: "Текст"})(disabled)
+        pre
+          .
+            +btn({
+              text: "Button with &lt;a&gt; tag",
+              href: "#",
+            })
+
+        +btn({text: "Button disabled"})(disabled)
         p Пример вызова
-        code
-          pre +btn({text: "Текст"})(disabled)
+        pre
+          .
+            +btn({
+              text: "Button disabled",
+            })(disabled)
+
+        +btn({
+          text: "Button with &lt;a&gt; tag disabled",
+          href: "#",
+        }).disabled(tabindex="-1")
+        p Пример вызова
+        pre
+          .
+            +btn({
+              text: "Button with &lt;a&gt; tag disabled",
+              href: "#",
+            }).disabled(tabindex="-1")
 
       section(id="form-elements")
         h2 Form elements

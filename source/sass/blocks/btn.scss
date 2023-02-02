@@ -1,3 +1,8 @@
+// По имени модификатора должно быть понятно, что он изменяет,
+// а не в каком блоке или на какой странице используется кнопка.
+// У компонента не должно быть margin, внешние отступы задаются по бэм
+// (по классу от родителя .parent__btn)
+
 .btn {
   display: inline-flex;
   padding: 10px 20px;
@@ -7,13 +12,11 @@
   background-color: $color-neon-blue;
   border: none;
   cursor: pointer;
+  user-select: none;
 
   transition: opacity $trans-default;
 
-  &--red {
-    background-color: $color-torch-red;
-  }
-
+  &.disabled,
   &:disabled {
     opacity: 0.5;
 
@@ -22,5 +25,9 @@
 
   @include hover-focus {
     opacity: 0.8;
+  }
+
+  &--red {
+    background-color: $color-torch-red;
   }
 }

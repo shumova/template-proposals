@@ -143,15 +143,33 @@
           </section>
           <section id="buttons">
             <h2>Buttons</h2>
-            <a class="btn" href="#">Текст</a>
-            <p>Пример вызова</p><code>
-              <pre>+btn({text: "Текст", href: "#"})</pre></code>
-            <a class="btn btn--red" href="#" target="_blank" rel="nofollow noopener noreferrer" aria-label="Просто ссылка">Текст</a>
-            <p>Пример вызова</p><code>
-              <pre>+btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red</pre></code>
-            <button class="btn" type="button" disabled>Текст</button>
-            <p>Пример вызова</p><code>
-              <pre>+btn({text: "Текст"})(disabled)</pre></code>
+            <button class="btn btn--red" type="button">Button --red</button>
+            <p>Пример вызова</p>
+            <pre>+btn({
+  text: "Button --red",
+  classMods: ['red'],
+})
+</pre>
+            <a class="btn" href="#">Button with &lt;a&gt; tag</a>
+            <p>Пример вызова</p>
+            <pre>+btn({
+  text: "Button with &lt;a&gt; tag",
+  href: "#",
+})
+</pre>
+            <button class="btn" type="button" disabled>Button disabled</button>
+            <p>Пример вызова</p>
+            <pre>+btn({
+  text: "Button disabled",
+})(disabled)
+</pre>
+            <a class="btn disabled" href="#" tabindex="-1">Button with &lt;a&gt; tag disabled</a>
+            <p>Пример вызова</p>
+            <pre>+btn({
+  text: "Button with &lt;a&gt; tag disabled",
+  href: "#",
+}).disabled(tabindex="-1")
+</pre>
           </section>
           <section id="form-elements">
             <h2>Form elements</h2>
