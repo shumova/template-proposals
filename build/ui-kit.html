@@ -129,6 +129,7 @@
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#modals" data-navigation-link>Modals</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#buttons" data-navigation-link>Buttons</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#links" data-navigation-link>Links</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#titles" data-navigation-link>Titles</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#form-elements" data-navigation-link>Form elements</a></li>
           </ul>
         </nav>
@@ -223,6 +224,25 @@
             <pre>+link({
   text: "Link with &lt;button&gt; tag disabled",
 })(disabled)
+</pre>
+          </section>
+          <section id="titles">
+            <h2>Titles</h2>
+            <p>Тег не обязательно должен быть h-</p>
+            <p class="title title--size-s">Title with &lt;p&gt; tag --size-s</p>
+            <p>Пример вызова</p>
+            <pre>+title({
+  classMods: ["size-s"],
+  text: "Title with &lt;p&gt; tag --size-s",
+})
+</pre>
+            <h3 class="title title--size-m title--uppercase">Title with &lt;h3&gt; tag --size-m --uppercase</h3>
+            <p>Пример вызова</p>
+            <pre>+title({
+  tag: "h3",
+  classMods: ["size-m", "uppercase"],
+  text: "Title with &lt;h3&gt; tag --size-m --uppercase",
+})
 </pre>
           </section>
           <section id="form-elements">

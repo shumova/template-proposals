@@ -125,6 +125,8 @@ block main
         li.header-ui__inner-item
           a.header-ui__inner-link(href="#links", data-navigation-link) Links
         li.header-ui__inner-item
+          a.header-ui__inner-link(href="#titles", data-navigation-link) Titles
+        li.header-ui__inner-item
           a.header-ui__inner-link(href="#form-elements", data-navigation-link) Form elements
 
   main
@@ -255,6 +257,36 @@ block main
             +link({
               text: "Link with &lt;button&gt; tag disabled",
             })(disabled)
+
+      section(id="titles")
+        h2 Titles
+        p Тег не обязательно должен быть h-
+
+        +title({
+          classMods: ["size-s"],
+          text: "Title with &lt;p&gt; tag --size-s",
+        })
+        p Пример вызова
+        pre
+          .
+            +title({
+              classMods: ["size-s"],
+              text: "Title with &lt;p&gt; tag --size-s",
+            })
+
+        +title({
+          tag: "h3",
+          classMods: ["size-m", "uppercase"],
+          text: "Title with &lt;h3&gt; tag --size-m --uppercase",
+        })
+        p Пример вызова
+        pre
+          .
+            +title({
+              tag: "h3",
+              classMods: ["size-m", "uppercase"],
+              text: "Title with &lt;h3&gt; tag --size-m --uppercase",
+            })
 
       section(id="form-elements")
         h2 Form elements

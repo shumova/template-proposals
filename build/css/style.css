@@ -867,6 +867,23 @@ button,
   text-decoration: underline;
 }
 
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.title--size-s {
+  font-size: 20px;
+}
+
+.title--size-m {
+  font-size: 25px;
+}
+
+.title--uppercase {
+  text-transform: uppercase;
+}
+
 .custom-input,
 .custom-textarea {
   position: relative;
