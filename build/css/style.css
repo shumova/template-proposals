@@ -810,6 +810,63 @@ button,
   background-color: #ff1553;
 }
 
+.link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.link.active {
+  cursor: default;
+  pointer-events: none;
+}
+
+.link:disabled,
+.link.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.link svg {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  width: auto;
+  height: 14px;
+  margin-left: 5px;
+  fill: currentColor;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.link.focus-visible:focus {
+  opacity: 0.5;
+}
+
+.link--underlined {
+  text-decoration: underline;
+}
+
 .custom-input,
 .custom-textarea {
   position: relative;
@@ -1463,6 +1520,15 @@ button,
 @media (hover: hover) {
   .btn:hover:not(.focus-visible) {
     opacity: 0.8;
+  }
+
+  .link:hover:not(.focus-visible) svg {
+    -webkit-transform: translateX(5px) translateZ(0);
+    transform: translateX(5px) translateZ(0);
+  }
+
+  .link:hover:not(.focus-visible) {
+    opacity: 0.5;
   }
 
   .custom-select__item[aria-selected=true]:hover:not(.focus-visible) {

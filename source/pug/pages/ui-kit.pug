@@ -123,6 +123,8 @@ block main
         li.header-ui__inner-item
           a.header-ui__inner-link(href="#buttons", data-navigation-link) Buttons
         li.header-ui__inner-item
+          a.header-ui__inner-link(href="#links", data-navigation-link) Links
+        li.header-ui__inner-item
           a.header-ui__inner-link(href="#form-elements", data-navigation-link) Form elements
 
   main
@@ -182,6 +184,77 @@ block main
               text: "Button with &lt;a&gt; tag disabled",
               href: "#",
             }).disabled(tabindex="-1")
+
+      section(id="links")
+        h2 Links
+
+        +link({
+          text: "Link --underlined",
+          classMods: ['underlined'],
+          href: "#",
+        })
+        p Пример вызова
+        pre
+          .
+            +link({
+              text: "Link --underlined",
+              classMods: ['underlined'],
+              href: "#",
+            })
+
+        +link({
+          text: "Link with &lt;button&gt; tag",
+        })
+        p Пример вызова
+        pre
+          .
+            +link({
+              text: "Link with &lt;button&gt; tag",
+            })
+
+        +link({
+          text: "Link with icon",
+          href: "#",
+          icon: {
+            name: "icon-arrow",
+            width: 59,
+            height: 42,
+          },
+        })
+        p Пример вызова
+        pre
+          .
+            +link({
+              text: "Link with icon",
+              href: "#",
+              icon: {
+                name: "icon-arrow",
+                width: 59,
+                height: 42,
+              },
+            })
+
+        +link({
+          text: "Link disabled",
+          href: "#",
+        }).disabled(tabindex="-1")
+        p Пример вызова
+        pre
+          .
+            +link({
+              text: "Link disabled",
+              href: "#",
+            }).disabled(tabindex="-1")
+
+        +link({
+          text: "Link with &lt;button&gt; tag disabled",
+        })(disabled)
+        p Пример вызова
+        pre
+          .
+            +link({
+              text: "Link with &lt;button&gt; tag disabled",
+            })(disabled)
 
       section(id="form-elements")
         h2 Form elements
