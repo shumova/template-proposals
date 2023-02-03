@@ -411,7 +411,7 @@ html {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   font-family: "Placeholder", "Arial", sans-serif;
   color: #000000;
   -webkit-font-smoothing: antialiased;
@@ -1046,7 +1046,6 @@ button,
 .custom-toggle {
   position: relative;
   font-size: 18px;
-  line-height: 27px;
   font-weight: 300;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1312,7 +1311,7 @@ button,
 
 .custom-select__text {
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 80%;
