@@ -908,6 +908,28 @@ button,
   text-transform: uppercase;
 }
 
+.text p {
+  margin: 0;
+  padding: 0;
+}
+
+.text p + p {
+  margin-top: 8px;
+}
+
+.text--size-m {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.text--bold {
+  font-weight: 700;
+}
+
+.text--mt-size-m p + p {
+  margin-top: 15px;
+}
+
 .custom-input,
 .custom-textarea {
   position: relative;
@@ -1492,6 +1514,10 @@ button,
 
   .modal--fit-content .modal__content {
     width: 100%;
+  }
+
+  .text--size-m {
+    font-size: 16px;
   }
 }
 

@@ -138,6 +138,7 @@
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#buttons" data-navigation-link>Buttons</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#links" data-navigation-link>Links</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#titles" data-navigation-link>Titles</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#text" data-navigation-link>Text</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#form-elements" data-navigation-link>Form elements</a></li>
           </ul>
         </nav>
@@ -278,6 +279,35 @@
   tag: "h3",
   classMods: ["size-m", "uppercase"],
   text: "Title with &lt;h3&gt; tag --size-m --uppercase",
+})
+</pre>
+          </section>
+          <section id="text">
+            <h2>Text</h2>
+            <div class="text text--bold">
+              <p>First paragraph.</p>
+              <p>Second paragraph.</p>
+            </div>
+            <p>Пример вызова</p>
+            <pre>+text({
+  textContent: [
+    "First paragraph.",
+    "Second paragraph.",
+  ],
+  classMods: ["bold"],
+})
+</pre>
+            <div class="text text--size-m text--mt-size-m text--bold">
+              <p>First paragraph.</p>
+              <p>Second paragraph.</p>
+            </div>
+            <p>Пример вызова</p>
+            <pre>+text({
+  textContent: [
+    "First paragraph.",
+    "Second paragraph.",
+  ],
+  classMods: ["size-m", "mt-size-m", "bold"],
 })
 </pre>
           </section>
