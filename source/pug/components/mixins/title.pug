@@ -1,6 +1,6 @@
 mixin title(options = {})
   - const tag = options.tag || "p";
-  - const classMods = options.classMods?.map((mod) => {return "title--" + mod}) || false;
+  - const classMods = options.classMods?.map((mod) => `title--${mod}`) || false;
   - const text = options.text || "";
 
   #{tag}.title(class=classMods)&attributes(attributes)!=text

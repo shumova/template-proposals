@@ -121,6 +121,8 @@ block main
         li.header-ui__inner-item
           a.header-ui__inner-link(href="#modals", data-navigation-link) Modals
         li.header-ui__inner-item
+          a.header-ui__inner-link(href="#logos", data-navigation-link) Logo
+        li.header-ui__inner-item
           a.header-ui__inner-link(href="#buttons", data-navigation-link) Buttons
         li.header-ui__inner-item
           a.header-ui__inner-link(href="#links", data-navigation-link) Links
@@ -140,19 +142,53 @@ block main
         p
           +btn({text: "modal-success"})(data-open-modal="success")
 
+      section(id="logos")
+        h2 Logo
+
+        p Логотип без ссылки (для index.html)
+        div(style="width: 100px; height: 100px;")
+          +logo({
+            icon: {
+              name: "logo",
+              width: 500,
+              height: 500,
+            },
+          }, "index.html")
+
+        p Логотип с ссылкой (для внутренних страниц)
+        div(style="width: 100px; height: 100px; color: red;")
+          +logo({
+            icon: {
+              name: "logo",
+              width: 500,
+              height: 500,
+            },
+          }, currentUrl)
+
+        p Вызов компонента с ссылкой и без неё одинаковый:
+        pre
+          .
+            +logo({
+              icon: {
+                name: "logo",
+                width: 500,
+                height: 500,
+              },
+            }, currentUrl)
+
       section(id="buttons")
         h2 Buttons
 
         +btn({
           text: "Button --red",
-          classMods: ['red'],
+          classMods: ["red"],
         })
         p Пример вызова
         pre
           .
             +btn({
               text: "Button --red",
-              classMods: ['red'],
+              classMods: ["red"],
             })
 
         +btn({
@@ -192,7 +228,7 @@ block main
 
         +link({
           text: "Link --underlined",
-          classMods: ['underlined'],
+          classMods: ["underlined"],
           href: "#",
         })
         p Пример вызова
@@ -200,7 +236,7 @@ block main
           .
             +link({
               text: "Link --underlined",
-              classMods: ['underlined'],
+              classMods: ["underlined"],
               href: "#",
             })
 

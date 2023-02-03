@@ -1,6 +1,6 @@
 mixin link(options = {})
   - const tag = options.href ? "a" : "button";
-  - const classMods = options.classMods?.map((mod) => {return "link--" + mod}) || false;
+  - const classMods = options.classMods?.map((mod) => `link--${mod}`) || false;
   - const href = options.href || false;
   - const text = options.text || "";
   - const type = options.type || tag === "button" ? options.type || "button" : false;

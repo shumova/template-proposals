@@ -1,3 +1,6 @@
+// Внешняя геометрия компонента (margin, width, height)
+// задаётся через родительский блок .parent__main-nav
+
 .main-nav {
   &__list {
     display: flex;
