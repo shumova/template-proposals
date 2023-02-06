@@ -56,5 +56,6 @@
     text-decoration: underline;
     // Если подчёркивание по макету непрерывное, используйте
     // text-decoration-skip-ink: none;
+    // text-decoration-skip: none; // для safari до 15.3 версии
   }
 }
