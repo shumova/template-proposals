@@ -396,7 +396,7 @@ block main
             +custom-input({
               inputType: "tel",
               inputLabel: "Введите ваш телефон",
-              inputName: "user-phone"
+              inputName: "user-phone",
               })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
             p Input #[b data-validate-type="custom-example", data-message-base="Поле обязательно к заполнению", data-message-success="Поле заполнено верно", data-required].
             +custom-input({inputLabel: "Введите 10 символов", inputName: "user-field", inputMinLength: "10"})(data-validate-type="custom-example", data-on-input-validate, data-required)
@@ -404,18 +404,19 @@ block main
             p Textarea #[b data-validate-type="text"].
             +custom-textarea({
               inputLabel: "Расскажите о себе",
-              inputName: "user-info"
+              inputName: "user-info",
             })(data-validate-type="text")
             hr
             h2.subtitle Чекбоксы
             p Чекбокс #[b data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"].
             div
               +custom-toggle({
+                classMods: ["checkbox"],
                 inputLabel: "Чекбокс",
                 inputName: "user-agreement",
                 inputValue: "user-agreement-1",
-                inputChecked: false
-              })(data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению").custom-toggle--checkbox
+                inputChecked: false,
+              })(data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению")
             hr
             p Селект простой с выбранной опцией.
             +custom-select({
@@ -425,9 +426,9 @@ block main
                 {text: "Тема 3", value: "id-3"},
                 {text: "Тема 4", value: "id-4"},
                 {text: "Тема 5", value: "id-5"},
-                {text: "Тема 6", value: "id-6"}
+                {text: "Тема 6", value: "id-6"},
               ]
-            })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-1", data-message-base="Поле обязательно к заполнению").custom-select
+            })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-1", data-message-base="Поле обязательно к заполнению")
             p Селект простой без выбранной опции.
             +custom-select({
               optionsList: [
@@ -436,9 +437,9 @@ block main
                 {text: "Тема 3", value: "id-3"},
                 {text: "Тема 4", value: "id-4"},
                 {text: "Тема 5", value: "id-5"},
-                {text: "Тема 6", value: "id-6"}
+                {text: "Тема 6", value: "id-6"},
               ]
-            })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
+            })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению")
             hr
 
             +btn({text: "Сбросить форму", type: "reset"})

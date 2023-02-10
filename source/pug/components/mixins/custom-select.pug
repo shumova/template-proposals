@@ -1,9 +1,10 @@
 mixin custom-select(options = {})
-  - const selectLabel = options.label ? options.label : false
-  - const selectPlaceholder = options.placeholder ? options.placeholder : false
-  - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
+  - const classMods = options.classMods?.map((mod) => `custom-select--${mod}`) || false
+  - const selectLabel = options.label || false
+  - const selectPlaceholder = options.placeholder || false
+  - const buttonAriaLabel = options.buttonAriaLabel || "Выберите одну из опций"
 
-  div&attributes(attributes)
+  .custom-select(class=classMods)&attributes(attributes)
     if selectLabel
       span.custom-select__label=selectLabel
     if selectPlaceholder
