@@ -1,4 +1,36 @@
-mixin picture(path, image, format, width, height, altText)
+mixin picture(data = {})
+  - const {path, image, format, width, height, altText, lazyLoading, mediaArr} = data;
+  - const mediaData = mediaArr instanceof Array ? mediaArr : false;
+
   picture(class!=attributes.class)
-    source(type='image/webp', srcset="img/" + path + "/" + image + ".webp" + ", " + "img/" + path + "/" + image + "@2x.webp" + " 2x")
-    img(src="img/" + path + "/" + image + "." + format, srcset= "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)
+    if mediaData
+      each item in mediaData
+        -
+          // rule : String, например "max-width"
+          // orientation : String, например "portrait"
+          // viewport : Number, например 767
+          // suffix : String, например "-size-s"
+          const {rule, orientation, viewport, suffix} = item || {};
+
+        source(
+          type="image/webp",
+          media=`(${rule}: ${viewport}px)${orientation ? ` and (orientation: ${orientation})` : ""}`,
+          srcset=`img/${path}/${image}${suffix}.webp, img/${path}/${image}${suffix}@2x.webp 2x`
+        )
+        source(
+          media=`(${rule}: ${viewport}px)${orientation ? ` and (orientation: ${orientation})` : ""}`,
+          srcset=`img/${path}/${image}${suffix}.${format}, img/${path}/${image}${suffix}@2x.${format} 2x`
+        )
+
+    source(
+      type="image/webp",
+      srcset=`img/${path}/${image}.webp, img/${path}/${image}@2x.webp 2x`
+    )
+    img(
+      src=`img/${path}/${image}.${format}`,
+      srcset=`img/${path}/${image}@2x.${format} 2x`,
+      width=width,
+      height=height,
+      alt=altText || '',
+      loading=lazyLoading && 'lazy'
+    )&attributes(attributes)

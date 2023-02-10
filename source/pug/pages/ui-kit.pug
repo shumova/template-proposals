@@ -132,6 +132,8 @@ block main
           a.header-ui__inner-link(href="#text", data-navigation-link) Text
         li.header-ui__inner-item
           a.header-ui__inner-link(href="#form-elements", data-navigation-link) Form elements
+        li.header-ui__inner-item
+          a.header-ui__inner-link(href="#picture", data-navigation-link) Piсture mixin example
 
   main
     .container
@@ -441,6 +443,44 @@ block main
 
             +btn({text: "Сбросить форму", type: "reset"})
             +btn({text: "Отправить форму", type: "submit"})
+
+      section(id="picture")
+        h2 Piсture mixin example
+        +picture({
+          path: "content",
+          image: "placeholder",
+          format: "png",
+          width: "480",
+          height: "480",
+          altText: "Some text",
+          lazyLoading: "true",
+          mediaArr: [
+            {
+              rule: "max-width",
+              viewport: 767,
+              suffix: "-size-s",
+            },
+          ],
+        })
+        p Пример вызова
+        pre
+          .
+            +picture({
+              path: "content",
+              image: "placeholder",
+              format: "png",
+              width: "480",
+              height: "480",
+              altText: "Some text",
+              lazyLoading: "true",
+              mediaArr: [
+                {
+                  rule: "max-width",
+                  viewport: 767,
+                  suffix: "-size-s",
+                },
+              ],
+            })
 
   script
     include ../../js/inline/ui-kit.js

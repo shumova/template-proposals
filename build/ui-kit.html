@@ -140,6 +140,7 @@
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#titles" data-navigation-link>Titles</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#text" data-navigation-link>Text</a></li>
             <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#form-elements" data-navigation-link>Form elements</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#picture" data-navigation-link>Piсture mixin example</a></li>
           </ul>
         </nav>
       </header>
@@ -396,6 +397,32 @@
                 <button class="btn" type="submit">Отправить форму</button>
               </form>
             </div>
+          </section>
+          <section id="picture">
+            <h2>Piсture mixin example</h2>
+            <picture>
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/content/placeholder-size-s.webp, img/content/placeholder-size-s@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/content/placeholder-size-s.png, img/content/placeholder-size-s@2x.png 2x">
+              <source type="image/webp" srcset="img/content/placeholder.webp, img/content/placeholder@2x.webp 2x"><img src="img/content/placeholder.png" srcset="img/content/placeholder@2x.png 2x" width="480" height="480" alt="Some text" loading="lazy">
+            </picture>
+            <p>Пример вызова</p>
+            <pre>+picture({
+  path: "content",
+  image: "placeholder",
+  format: "png",
+  width: "480",
+  height: "480",
+  altText: "Some text",
+  lazyLoading: "true",
+  mediaArr: [
+    {
+      rule: "max-width",
+      viewport: 767,
+      suffix: "-size-s",
+    },
+  ],
+})
+</pre>
           </section>
         </div>
       </main>
