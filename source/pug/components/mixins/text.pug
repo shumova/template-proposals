@@ -1,6 +1,6 @@
 mixin text(options = {})
-  - const classMods = options.classMods?.map((mod) => `text--${mod}`) || false;
-  - const textContent = options.textContent || [];
+  - const classMods = options.classMods?.map((mod) => `text--${mod}`) || false
+  - const textContent = options.textContent || []
 
   .text(class=classMods)&attributes(attributes)
     each item in textContent
