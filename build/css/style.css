@@ -1002,12 +1002,12 @@ svg + .btn__text,
   line-height: 1.6;
 }
 
-.text--bold {
-  font-weight: 700;
+.text--size-m p + p {
+  margin-top: 15px;
 }
 
-.text--mt-size-m p + p {
-  margin-top: 15px;
+.text--bold {
+  font-weight: 700;
 }
 
 .custom-input,
@@ -1593,10 +1593,6 @@ svg + .btn__text,
 
   .modal--fit-content .modal__content {
     width: 100%;
-  }
-
-  .text--size-m {
-    font-size: 16px;
   }
 }
 
