@@ -6,8 +6,9 @@ mixin link(options = {})
   - const type = options.type || tag === "button" ? options.type || "button" : false
   - const target = options.isExternal ? "_blank" : false
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false
-  - const {name, width, height} = options.icon || false
+  - const icon = options.icon || false
+  - const {name, width, height} = icon || false
 
   #{tag}.link(class=classMods, href=href, target=target, rel=rel, type=type)&attributes(attributes)!=text
-    if options.icon
+    if icon
       +icon(name, width, height)
