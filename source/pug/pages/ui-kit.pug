@@ -228,56 +228,47 @@ block main
             })
 
         +btn({
-          text: "Button with icon before",
+          text: "Button --active-red with icon",
+          classMods: ["active-red"],
           icon: {
-            type: 'before',
-            svg: {
-              name: 'icon-arrow',
-              width: 10,
-              height: 16,
-            },
+            name: 'icon-arrow',
+            width: 10,
+            height: 16,
           },
         })
         p Пример вызова
         pre
           .
             +btn({
-              text: "Button with icon before",
+              text: "Button --active-red with icon",
+              classMods: ["active-red"],
               icon: {
-                type: 'before',
-                svg: {
-                  name: 'icon-arrow',
-                  width: 10,
-                  height: 16,
-                },
+                name: 'icon-arrow',
+                width: 10,
+                height: 16,
               },
             })
 
         +btn({
-          text: "Button --active-red with icon after",
-          classMods: ["active-red"],
+          text: "Button with left icon",
+          isLeftIcon: true,
           icon: {
-            type: 'after',
-            svg: {
-              name: 'icon-arrow',
-              width: 10,
-              height: 16,
-            },
+            name: 'icon-arrow',
+            width: 10,
+            height: 16,
+            isLeft: true,
           },
         })
         p Пример вызова
         pre
           .
             +btn({
-              text: "Button --active-red with icon after",
-              classMods: ["active-red"],
+              text: "Button with left icon",
               icon: {
-                type: 'after',
-                svg: {
-                  name: 'icon-arrow',
-                  width: 10,
-                  height: 16,
-                },
+                name: 'icon-arrow',
+                width: 10,
+                height: 16,
+                isLeft: true,
               },
             })
 

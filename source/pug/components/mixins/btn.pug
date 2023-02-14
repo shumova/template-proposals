@@ -6,15 +6,15 @@ mixin btn(options = {})
   - const type = options.type || tag === "button" ? options.type || "button" : false
   - const target = options.isExternal ? "_blank" : false
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false
-  - const icon = options.icon?.type || false
-  - const {name, width, height} = options.icon?.svg || false
+  - const icon = options.icon || false
+  - const {name, width, height, isLeft} = icon || false
 
   #{tag}.btn(class=classMods, href=href, target=target, rel=rel, type=type)&attributes(attributes)
 
-    if (icon && icon === "before")
+    if (icon && isLeft)
       +icon(name, width, height)
 
     span.btn__text !{text}
 
-    if (icon && icon === "after")
+    if (icon && !isLeft)
       +icon(name, width, height)

@@ -221,40 +221,35 @@
   href: "#",
 })
 </pre>
-            <button class="btn" type="button">
-              <svg width="10" height="16" aria-hidden="true">
-                <use xlink:href="#icon-arrow"></use>
-              </svg><span class="btn__text">Button with icon before</span>
-            </button>
-            <p>Пример вызова</p>
-            <pre>+btn({
-  text: "Button with icon before",
-  icon: {
-    type: 'before',
-    svg: {
-      name: 'icon-arrow',
-      width: 10,
-      height: 16,
-    },
-  },
-})
-</pre>
-            <button class="btn btn--active-red" type="button"><span class="btn__text">Button --active-red with icon after</span>
+            <button class="btn btn--active-red" type="button"><span class="btn__text">Button --active-red with icon</span>
               <svg width="10" height="16" aria-hidden="true">
                 <use xlink:href="#icon-arrow"></use>
               </svg>
             </button>
             <p>Пример вызова</p>
             <pre>+btn({
-  text: "Button --active-red with icon after",
+  text: "Button --active-red with icon",
   classMods: ["active-red"],
   icon: {
-    type: 'after',
-    svg: {
-      name: 'icon-arrow',
-      width: 10,
-      height: 16,
-    },
+    name: 'icon-arrow',
+    width: 10,
+    height: 16,
+  },
+})
+</pre>
+            <button class="btn" type="button">
+              <svg width="10" height="16" aria-hidden="true">
+                <use xlink:href="#icon-arrow"></use>
+              </svg><span class="btn__text">Button with left icon</span>
+            </button>
+            <p>Пример вызова</p>
+            <pre>+btn({
+  text: "Button with left icon",
+  icon: {
+    name: 'icon-arrow',
+    width: 10,
+    height: 16,
+    isLeft: true,
   },
 })
 </pre>
