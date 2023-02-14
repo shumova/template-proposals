@@ -1,9 +1,7 @@
-// Внешняя геометрия компонента (margin, width, height)
-// задаётся через родительский блок .parent__logo
+// Внешняя геометрия компонента (margin, width, height) задаётся через родительский блок как .parent__logo или .parent .logo
 
 .logo {
   display: flex;
-  height: 100%;
   transition: opacity $trans-default;
 
   svg {

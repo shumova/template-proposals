@@ -3,11 +3,9 @@ mixin logo(options = {}, currentUrl = false)
   - const tag = isIndex ? "span" : "a"
   - const classMods = options.classMods?.map((mod) => `logo--${mod}`) || false
   - const href = isIndex ? false : "index.html"
+  - const ariaLabel = isIndex ? false : "Перейти на Главную"
   - const {name, width, height} = options.icon || false
 
   //- lighthouse снимает 10 баллов SEO за <a> без href
-  #{tag}.logo(class=classMods, href=href)&attributes(attributes)
+  #{tag}.logo(class=classMods, href=href, aria-label=ariaLabel)&attributes(attributes)
     +icon(name, width, height)
-
-    if !isIndex
-      span.visually-hidden Перейти на главную страницу
