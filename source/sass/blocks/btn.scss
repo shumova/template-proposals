@@ -1,12 +1,17 @@
-// По имени модификатора должно быть понятно, что он изменяет,
-// а не в каком блоке или на какой странице используется кнопка.
-// Внешняя геометрия компонента (margin, width, height)
-// задаётся через родительский блок .parent__btn
+// По имени модификатора должно быть понятно, что он изменяет, а не в каком блоке или на какой странице используется кнопка
+// Ширина и высота кнопки определяются контентом и отступами, а не задаются отдельно (кроме случая растяжения на всю ширину)
+// Внешние отступы (margin) задаются через родительский блок как .parent__btn или .parent .btn
+// Если внутренние отступы (padding) или расстояние между текстом и иконкой в разных блоках немного отличаются, сделайте их одинаковыми
 
 .btn {
+  --icon-margin: 10px;
+
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
 
+  line-height: inherit;
   color: $color-default-white;
 
   background-color: $color-neon-blue;
@@ -14,7 +19,7 @@
   cursor: pointer;
   user-select: none;
 
-  transition: opacity $trans-default;
+  transition: color $trans-default, opacity $trans-default;
 
   &.disabled,
   &:disabled {
@@ -27,7 +32,43 @@
     opacity: 0.8;
   }
 
+  &--size-l {
+    padding: 15px 25px;
+
+    font-weight: 700;
+    font-size: 20px;
+  }
+
   &--red {
     background-color: $color-torch-red;
+  }
+
+  &--active-red {
+    &.active {
+      color: $color-torch-red;
+      opacity: 1;
+    }
+
+    @include hover-focus {
+      color: $color-torch-red;
+      opacity: 1;
+    }
+  }
+
+  svg {
+    flex-shrink: 0;
+    height: 16px;
+    width: auto;
+
+    transform: translateZ(0);
+  }
+
+  svg:first-child {
+    transform: rotate(180deg);
+  }
+
+  svg + &__text,
+  &__text + svg {
+    margin-left: var(--icon-margin);
   }
 }

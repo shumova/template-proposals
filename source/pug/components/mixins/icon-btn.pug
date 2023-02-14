@@ -1,0 +1,12 @@
+mixin icon-btn(options = {})
+  - const tag = options.href ? "a" : "button"
+  - const classMods = options.classMods?.map((mod) => `icon-btn--${mod}`) || false
+  - const href = options.href || false
+  - const type = options.type || tag === "button" ? options.type || "button" : false
+  - const target = options.isExternal ? "_blank" : false
+  - const ariaLabel = options.ariaLabel || false
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false
+  - const {name, width, height} = options.icon || false
+
+  #{tag}.icon-btn(class=classMods, href=href, target=target, rel=rel, type=type, aria-label=ariaLabel)&attributes(attributes)
+    +icon(name, width, height)

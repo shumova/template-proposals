@@ -803,10 +803,86 @@ button,
 }
 
 .btn {
+  --icon-margin: 10px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px 20px;
+  line-height: inherit;
+  color: #ffffff;
+  background-color: #2c39f2;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: color 0.3s ease, opacity 0.3s ease;
+  -o-transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn.focus-visible:focus {
+  opacity: 0.8;
+}
+
+.btn--size-l {
+  padding: 15px 25px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.btn--red {
+  background-color: #ff1553;
+}
+
+.btn--active-red.active {
+  color: #ff1553;
+  opacity: 1;
+}
+
+.btn--active-red.focus-visible:focus {
+  color: #ff1553;
+  opacity: 1;
+}
+
+.btn svg {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 16px;
+  width: auto;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.btn svg:first-child {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+svg + .btn__text,
+.btn__text + svg {
+  margin-left: var(--icon-margin);
+}
+
+.icon-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 10px;
   color: #ffffff;
   background-color: #2c39f2;
   border: none;
@@ -820,18 +896,23 @@ button,
   transition: opacity 0.3s ease;
 }
 
-.btn.disabled,
-.btn:disabled {
+.icon-btn.disabled,
+.icon-btn:disabled {
   opacity: 0.5;
   pointer-events: none;
 }
 
-.btn.focus-visible:focus {
+.icon-btn.focus-visible:focus {
   opacity: 0.8;
 }
 
-.btn--red {
-  background-color: #ff1553;
+.icon-btn svg {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 20px;
+  width: auto;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .link {
@@ -1589,6 +1670,15 @@ button,
   }
 
   .btn:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .btn--active-red:hover:not(.focus-visible) {
+    color: #ff1553;
+    opacity: 1;
+  }
+
+  .icon-btn:hover:not(.focus-visible) {
     opacity: 0.8;
   }
 

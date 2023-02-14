@@ -1,0 +1,37 @@
+// По имени модификатора должно быть понятно, что он изменяет, а не в каком блоке или на какой странице используется кнопка
+// Ширина и высота кнопки определяются контентом и отступами, а не задаются отдельно (кроме случая растяжения на всю ширину)
+// Внешние отступы (margin) задаются через родительский блок как .parent__icon-btn или .parent .icon-btn
+// Если внутренние отступы (padding) в разных блоках немного отличаются, сделайте их одинаковыми
+
+.icon-btn {
+  display: inline-flex;
+  padding: 10px;
+
+  color: $color-default-white;
+
+  background-color: $color-neon-blue;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+
+  transition: opacity $trans-default;
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  svg {
+    flex-shrink: 0;
+    height: 20px;
+    width: auto;
+
+    transform: translateZ(0);
+  }
+}

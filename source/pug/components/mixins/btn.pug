@@ -6,6 +6,15 @@ mixin btn(options = {})
   - const type = options.type || tag === "button" ? options.type || "button" : false
   - const target = options.isExternal ? "_blank" : false
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false
-  - const ariaLabel = options.ariaLabel || false
+  - const icon = options.icon?.type || false
+  - const {name, width, height} = options.icon?.svg || false
 
-  #{tag}.btn(class=classMods, href=href, target=target, rel=rel type=type, aria-label=ariaLabel)&attributes(attributes)!=text
+  #{tag}.btn(class=classMods, href=href, target=target, rel=rel, type=type)&attributes(attributes)
+
+    if (icon && icon === "before")
+      +icon(name, width, height)
+
+    span.btn__text !{text}
+
+    if (icon && icon === "after")
+      +icon(name, width, height)

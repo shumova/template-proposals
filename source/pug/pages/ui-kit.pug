@@ -183,16 +183,36 @@ block main
       section(id="buttons")
         h2 Buttons
 
+        +icon-btn({
+          ariaLabel: "Close",
+          icon: {
+            name: 'icon-close',
+            width: 20,
+            height: 20,
+          },
+        })
+        p Пример вызова
+        pre
+          .
+            +icon-btn({
+              ariaLabel: "Close.",
+              icon: {
+                name: 'icon-close',
+                width: 20,
+                height: 20,
+              },
+            })
+
         +btn({
-          text: "Button --red",
-          classMods: ["red"],
+          text: "Button --size-l --red",
+          classMods: ["size-l", "red"],
         })
         p Пример вызова
         pre
           .
             +btn({
-              text: "Button --red",
-              classMods: ["red"],
+              text: "Button --size-l --red",
+              classMods: ["size-l", "red"],
             })
 
         +btn({
@@ -205,6 +225,60 @@ block main
             +btn({
               text: "Button with &lt;a&gt; tag",
               href: "#",
+            })
+
+        +btn({
+          text: "Button with icon before",
+          icon: {
+            type: 'before',
+            svg: {
+              name: 'icon-arrow',
+              width: 10,
+              height: 16,
+            },
+          },
+        })
+        p Пример вызова
+        pre
+          .
+            +btn({
+              text: "Button with icon before",
+              icon: {
+                type: 'before',
+                svg: {
+                  name: 'icon-arrow',
+                  width: 10,
+                  height: 16,
+                },
+              },
+            })
+
+        +btn({
+          text: "Button --active-red with icon after",
+          classMods: ["active-red"],
+          icon: {
+            type: 'after',
+            svg: {
+              name: 'icon-arrow',
+              width: 10,
+              height: 16,
+            },
+          },
+        })
+        p Пример вызова
+        pre
+          .
+            +btn({
+              text: "Button --active-red with icon after",
+              classMods: ["active-red"],
+              icon: {
+                type: 'after',
+                svg: {
+                  name: 'icon-arrow',
+                  width: 10,
+                  height: 16,
+                },
+              },
             })
 
         +btn({text: "Button disabled"})(disabled)
