@@ -159,17 +159,6 @@ block main
             },
             isIndex: true,
           })
-        p Пример вызова:
-        pre
-          .
-            +logo({
-              icon: {
-                name: "logo",
-                width: 500,
-                height: 500,
-              },
-              isIndex: true,
-            })
 
         p Логотип с ссылкой (для внутренних страниц)
         div(style="width: 100px; height: 100px; color: red;")
@@ -179,8 +168,10 @@ block main
               width: 500,
               height: 500,
             },
+            isIndex: currentUrl === "index.html",
           })
-        p Пример вызова:
+
+        p Вызов компонента с ссылкой и без неё одинаковый:
         pre
           .
             +logo({
@@ -189,6 +180,7 @@ block main
                 width: 500,
                 height: 500,
               },
+              isIndex: currentUrl === "index.html",
             })
 
       section(id="buttons")
