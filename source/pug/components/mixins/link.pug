@@ -7,8 +7,13 @@ mixin link(options = {})
   - const target = options.isExternal ? "_blank" : false
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false
   - const icon = options.icon || false
-  - const {name, width, height} = icon || false
+  - const {name, width, height, isLeft} = icon || false
 
-  #{tag}.link(class=classMods, href=href, target=target, rel=rel, type=type)&attributes(attributes)!=text
-    if icon
+  #{tag}.link(class=classMods, href=href, target=target, rel=rel, type=type)&attributes(attributes)
+    if (icon && isLeft)
+      +icon(name, width, height)
+
+    span.link__text !{text}
+
+    if (icon && !isLeft)
       +icon(name, width, height)

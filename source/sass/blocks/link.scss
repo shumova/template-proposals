@@ -1,8 +1,13 @@
 // По имени модификатора должно быть понятно, что он изменяет, а не в каком блоке или на какой странице используется ссылка
 // Внешняя геометрия компонента (margin, width, height) задаётся через родительский блок как .parent__link или .parent .link
+// Если расстояние между текстом и иконкой в разных блоках незначительно отличается, сделайте его одинаковым
 
 .link {
+  --icon-margin: 10px;
+
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
 
   font: inherit;
@@ -27,12 +32,14 @@
     pointer-events: none;
   }
 
+  @include hover-focus {
+    opacity: 0.5;
+  }
+
   svg {
     flex-shrink: 0;
-    align-self: center;
-    width: auto;
     height: 14px;
-    margin-left: 5px;
+    width: auto;
 
     fill: currentColor;
 
@@ -40,14 +47,19 @@
     transform: translateZ(0);
   }
 
-  @include hover {
-    svg {
-      transform: translateX(5px) translateZ(0);
-    }
+  svg:first-child {
+    transform: rotate(180deg);
   }
 
-  @include hover-focus {
-    opacity: 0.5;
+  svg + &__text,
+  &__text + svg {
+    margin-left: var(--icon-margin);
+  }
+
+  @include hover {
+    svg:last-child {
+      transform: translateX(5px) translateZ(0);
+    }
   }
 
   &--underlined {

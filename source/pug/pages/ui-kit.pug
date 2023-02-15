@@ -320,7 +320,7 @@ block main
             })
 
         +link({
-          text: "Link with icon",
+          text: "Link with animated icon",
           href: "#",
           icon: {
             name: "icon-arrow",
@@ -332,12 +332,36 @@ block main
         pre
           .
             +link({
-              text: "Link with icon",
+              text: "Link with animated icon",
               href: "#",
               icon: {
                 name: "icon-arrow",
                 width: 59,
                 height: 42,
+              },
+            })
+
+        +link({
+          text: "Link with left icon",
+          href: "#",
+          icon: {
+            name: "icon-arrow",
+            width: 59,
+            height: 42,
+            isLeft: true,
+          },
+        })
+        p Пример вызова
+        pre
+          .
+            +link({
+              text: "Link with left icon",
+              href: "#",
+              icon: {
+                name: "icon-arrow",
+                width: 59,
+                height: 42,
+                isLeft: true,
               },
             })
 

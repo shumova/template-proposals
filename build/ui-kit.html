@@ -271,7 +271,7 @@
           </section>
           <section id="links">
             <h2>Links</h2>
-            <a class="link link--underlined" href="#">Link --underlined
+            <a class="link link--underlined" href="#"><span class="link__text">Link --underlined</span>
             </a>
             <p>Пример вызова</p>
             <pre>+link({
@@ -280,21 +280,21 @@
   href: "#",
 })
 </pre>
-            <button class="link" type="button">Link with &lt;button&gt; tag
+            <button class="link" type="button"><span class="link__text">Link with &lt;button&gt; tag</span>
             </button>
             <p>Пример вызова</p>
             <pre>+link({
   text: "Link with &lt;button&gt; tag",
 })
 </pre>
-            <a class="link" href="#">Link with icon
+            <a class="link" href="#"><span class="link__text">Link with animated icon</span>
               <svg width="59" height="42" aria-hidden="true">
                 <use xlink:href="#icon-arrow"></use>
               </svg>
             </a>
             <p>Пример вызова</p>
             <pre>+link({
-  text: "Link with icon",
+  text: "Link with animated icon",
   href: "#",
   icon: {
     name: "icon-arrow",
@@ -303,7 +303,24 @@
   },
 })
 </pre>
-            <a class="link disabled" href="#" tabindex="-1">Link disabled
+            <a class="link" href="#">
+              <svg width="59" height="42" aria-hidden="true">
+                <use xlink:href="#icon-arrow"></use>
+              </svg><span class="link__text">Link with left icon</span>
+            </a>
+            <p>Пример вызова</p>
+            <pre>+link({
+  text: "Link with left icon",
+  href: "#",
+  icon: {
+    name: "icon-arrow",
+    width: 59,
+    height: 42,
+    isLeft: true,
+  },
+})
+</pre>
+            <a class="link disabled" href="#" tabindex="-1"><span class="link__text">Link disabled</span>
             </a>
             <p>Пример вызова</p>
             <pre>+link({
@@ -311,7 +328,7 @@
   href: "#",
 }).disabled(tabindex="-1")
 </pre>
-            <button class="link" type="button" disabled>Link with &lt;button&gt; tag disabled
+            <button class="link" type="button" disabled><span class="link__text">Link with &lt;button&gt; tag disabled</span>
             </button>
             <p>Пример вызова</p>
             <pre>+link({
