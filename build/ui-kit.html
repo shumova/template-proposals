@@ -170,6 +170,16 @@
                 </svg>
               </span>
             </div>
+            <p>Пример вызова:</p>
+            <pre>+logo({
+  icon: {
+    name: "logo",
+    width: 500,
+    height: 500,
+  },
+  isIndex: true,
+})
+</pre>
             <p>Логотип с ссылкой (для внутренних страниц)</p>
             <div style="width: 100px; height: 100px; color: red;">
               <a class="logo" href="index.html" aria-label="Перейти на Главную">
@@ -178,14 +188,14 @@
                 </svg>
               </a>
             </div>
-            <p>Вызов компонента с ссылкой и без неё одинаковый:</p>
+            <p>Пример вызова:</p>
             <pre>+logo({
   icon: {
     name: "logo",
     width: 500,
     height: 500,
   },
-}, currentUrl)
+})
 </pre>
           </section>
           <section id="buttons">

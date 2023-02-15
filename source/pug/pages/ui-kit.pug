@@ -157,7 +157,19 @@ block main
               width: 500,
               height: 500,
             },
-          }, "index.html")
+            isIndex: true,
+          })
+        p Пример вызова:
+        pre
+          .
+            +logo({
+              icon: {
+                name: "logo",
+                width: 500,
+                height: 500,
+              },
+              isIndex: true,
+            })
 
         p Логотип с ссылкой (для внутренних страниц)
         div(style="width: 100px; height: 100px; color: red;")
@@ -167,9 +179,8 @@ block main
               width: 500,
               height: 500,
             },
-          }, currentUrl)
-
-        p Вызов компонента с ссылкой и без неё одинаковый:
+          })
+        p Пример вызова:
         pre
           .
             +logo({
@@ -178,7 +189,7 @@ block main
                 width: 500,
                 height: 500,
               },
-            }, currentUrl)
+            })
 
       section(id="buttons")
         h2 Buttons
