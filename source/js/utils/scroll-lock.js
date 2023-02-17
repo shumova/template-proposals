@@ -15,7 +15,7 @@ export class ScrollLock {
   _getBodyScrollTop() {
     return (
       self.pageYOffset ||
-      (document.documentElement && document.documentElement.ScrollTop) ||
+      (document.documentElement && document.documentElement.scrollTop) ||
       (document.body && document.body.scrollTop)
     );
   }
