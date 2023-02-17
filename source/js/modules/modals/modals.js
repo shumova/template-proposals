@@ -81,7 +81,9 @@ export class Modals {
       return;
     }
 
-    evt.preventDefault();
+    if (!(target.closest('[data-open-modal]') instanceof HTMLLabelElement)) {
+      evt.preventDefault();
+    }
 
     this._modalName = target.closest('[data-open-modal]').dataset.openModal;
 
