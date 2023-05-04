@@ -213,6 +213,18 @@ export class CustomSelect {
     if (evt.shiftKey && evt.key === 'Tab' && parent.closest('.is-open')) {
       this._closeSelect();
     }
+
+    // очистить выбор
+    if (evt.key === 'Delete' || evt.key === 'Backspace') {
+      const activeItem = parent.querySelector('.custom-select__item[aria-selected="true"]');
+      if (activeItem) {
+        activeItem.setAttribute('aria-selected', 'false');
+        parent.querySelector('.custom-select__text').textContent = '';
+        parent.querySelector('select').options.selectedIndex = 0;
+        parent.classList.remove('is-valid');
+        parent.classList.remove('not-empty');
+      }
+    }
   }
 
   _setActiveSelectItemsState(multiple, selectItems) {
